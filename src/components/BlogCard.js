@@ -16,7 +16,7 @@ export default function BlogCard({title, desc, imgUrl}) {
         {desc}
       </p>
       <button
-        className={`bg-[#EC5131] w-full rounded-lg py-1.5 px-2 mt-3 text-lg text-white`}>
+        className={`bg-[#EC5131] hover:bg-[#F26D49] w-full rounded-lg py-1.5 px-2 mt-3 text-lg text-white`}>
         Read
       </button>
     </div>

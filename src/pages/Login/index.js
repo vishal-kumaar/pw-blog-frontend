@@ -18,7 +18,7 @@ export default function Login() {
         />
         <button
           type="submit"
-          className={`bg-[#EC4F2F] text-white rounded-xl py-2.5 w-full`}>
+          className={`bg-[#EC4F2F] hover:bg-[#F26D49] text-white rounded-xl py-2.5 w-full`}>
           Submit
         </button>
       </form>
