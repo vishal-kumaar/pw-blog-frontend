@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import AddBlog from "./pages/AddBlog";
 import MyBlog from "./pages/MyBlog";
 import Blog from "./pages/Blog";
+import Custom404 from "./pages/Custom404";
 
 export default function Routes() {
   const routes = useRoutes([
@@ -32,6 +33,10 @@ export default function Routes() {
     {
       path: "/myblog",
       element: <MyBlog />,
+    },
+    {
+      path: "*",
+      element: <Custom404 />,
     },
   ]);
 
