@@ -18,7 +18,7 @@ export default function Navbar() {
             Add Blog
           </Link>
           <Link
-            to="/myblog/blogId"
+            to="/myblog"
             className={`block bg-black hover:bg-black/50 text-white w-32 text-center py-2.5 rounded-lg text-sm`}>
             MyBlog
           </Link>

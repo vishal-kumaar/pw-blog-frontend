@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AddBlog from "./pages/AddBlog";
 import MyBlog from "./pages/MyBlog";
+import Blog from "./pages/Blog";
 
 export default function Routes() {
   const routes = useRoutes([
@@ -21,11 +22,15 @@ export default function Routes() {
       element: <Register />,
     },
     {
+      path: "/blog/:id",
+      element: <Blog />,
+    },
+    {
       path: "/blog/add",
       element: <AddBlog />,
     },
     {
-      path: "/myblog/:blogId",
+      path: "/myblog",
       element: <MyBlog />,
     },
   ]);
