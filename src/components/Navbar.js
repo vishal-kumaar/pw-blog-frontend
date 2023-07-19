@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import hamburger from "../assets/icons/hamburger.svg";
 
 export default function Navbar() {
   return (
     <nav className={`bg-[#282828] px-5 py-10`}>
-      <div className={`max-w-[70rem] flex items-center mx-auto`}>
+      <div
+        className={`max-w-[80rem] flex items-center justify-between mx-auto`}>
         <div
-          className={`flex items-center gap-10 justify-self-end w-fit mx-auto`}>
+          className={`hidden md:flex items-center gap-5 xl:gap-10 justify-self-end w-fit mx-auto`}>
           <Link
             to="/"
             className={`block bg-black hover:bg-black/50 text-white w-32 text-center py-2.5 rounded-lg text-sm`}>
@@ -33,8 +35,13 @@ export default function Navbar() {
             LogOut
           </Link>
         </div>
+        <img
+          src={hamburger}
+          alt="menu"
+          className="invert w-6 block md:hidden"
+        />
         <div
-          className={`px-8 py-2.5 text-white bg-[#24C294] rounded-lg text-sm w-fit`}>
+          className={`py-1.5 px-4 md:px-8 md:py-2.5 text-white bg-[#24C294] rounded-lg text-sm w-fit`}>
           Welcome
         </div>
       </div>

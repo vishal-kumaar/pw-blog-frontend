@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function Register() {
   return (
-    <main className={`w-96 mt-10 mx-auto bg-[#393939] px-5 py-8 rounded-xl`}>
-      <h1 className="text-white text-center font-bold text-4xl mb-10 mt-4">
+    <main className={`w-[90%] sm:w-96 mt-10 mx-auto bg-[#393939] px-5 py-8 rounded-xl`}>
+      <h1 className="text-white text-center font-bold text-3xl sm:text-4xl mb-10 mt-4">
         Register
       </h1>
       <form className={`flex flex-col gap-3`}>

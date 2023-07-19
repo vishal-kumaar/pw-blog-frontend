@@ -3,8 +3,8 @@ import React from "react";
 export default function AddBlog() {
   return (
     <main
-      className={`max-w-[28rem] mt-10 mx-auto bg-[#393939] px-5 pt-8 pb-4 rounded-md`}>
-      <h1 className="text-[#F26D48] text-center font-bold text-4xl mb-10 mt-4">
+      className={`w-[90%] sm:w-[28rem] mt-10 mx-auto bg-[#393939] px-5 pt-8 pb-4 rounded-md`}>
+      <h1 className="text-[#F26D48] text-center font-bold text-3xl sm:text-4xl mb-10 mt-4">
         Write Your Blog
       </h1>
       <form className={`flex flex-col gap-3`}>

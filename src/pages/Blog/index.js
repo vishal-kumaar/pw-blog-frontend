@@ -3,11 +3,10 @@ import React, { useEffect } from "react";
 export default function Blog() {
   useEffect(() => {
     const content = document.getElementById("content");
-    content.style.height = "auto";
     content.style.height = `${content.scrollHeight}px`;
   }, []);
   return (
-    <div className="text-white w-[70rem] mx-auto my-10">
+    <div className="text-white w-[90%] xl:w-[70rem] mx-auto my-10">
       <main className={`flex flex-col items-center text-center`}>
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9hZEF-P1-tGcAaFwMmzK4kaRFl3lzvy0YwIn3xQffOAIl9mAcFtws7IY59q-AArDD0MA&usqp=CAU"

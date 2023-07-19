@@ -4,7 +4,7 @@ import BlogCard from "../../components/BlogCard";
 export default function MyBlog() {
   return (
     <main
-      className={`text-[#B9B9B9] flex flex-wrap gap-x-3 gap-y-6 max-w-[70rem] mx-auto my-7`}>
+      className={`text-[#B9B9B9] flex flex-wrap gap-x-3 gap-y-6 w-[90%] sm:w-[95%] xl:w-[70rem] mx-auto my-7`}>
       <BlogCard
         title="Learn web development in 10 days on PW Skills"
         desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum officiis
