@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import hamburger from "../assets/icons/hamburger.svg";
+import TopbarContext from "../contexts/topbar/TopbarContext";
 
 export default function Navbar() {
+  const { toggleTopbar } = useContext(TopbarContext);
   return (
     <nav className={`bg-[#282828] px-5 py-10`}>
       <div
@@ -38,7 +40,8 @@ export default function Navbar() {
         <img
           src={hamburger}
           alt="menu"
-          className="invert w-6 block md:hidden"
+          className="invert cursor-pointer w-6 block md:hidden"
+          onClick={toggleTopbar}
         />
         <div
           className={`py-1.5 px-4 md:px-8 md:py-2.5 text-white bg-[#24C294] rounded-lg text-sm w-fit`}>
