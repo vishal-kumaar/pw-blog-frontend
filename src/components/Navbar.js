@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className={`bg-zinc-800 flex items-center px-5 py-10`}>
+    <nav className={`bg-[#282828] flex items-center px-5 py-10`}>
       <div
         className={`flex items-center gap-10 justify-self-end w-fit mx-auto`}>
         <Link
@@ -33,7 +33,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div
-        className={`px-8 py-2.5 text-white bg-green-500 rounded-lg text-sm w-fit`}>
+        className={`px-8 py-2.5 text-white bg-[#24C294] rounded-lg text-sm w-fit`}>
         Welcome
       </div>
     </nav>
