@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import EditBlogContext from "../contexts/editBlog/EditBlogContext";
 
-export default function BlogCard({ title, desc, imgUrl, isEdit, isDelete }) {
+export default function BlogCard({
+  id,
+  title,
+  desc,
+  imgUrl,
+  isEdit,
+  isDelete,
+}) {
+  const { edit } = useContext(EditBlogContext);
+
   return (
     <div
       className={`text-center w-full sm:w-[calc(50%-8px)] md:w-[calc(33.33%-8px)] h-fit bg-[#282828] px-6 py-8 rounded-lg`}>
@@ -23,7 +33,8 @@ export default function BlogCard({ title, desc, imgUrl, isEdit, isDelete }) {
       <button
         className={`${
           isEdit ? "block" : "hidden"
-        } bg-[#EC5131] hover:bg-[#F26D49] w-full rounded-lg py-1.5 px-2 mt-3 text-lg text-white`}>
+        } bg-[#EC5131] hover:bg-[#F26D49] w-full rounded-lg py-1.5 px-2 mt-3 text-lg text-white`}
+        onClick={() => edit(id)}>
         Edit
       </button>
       <button
