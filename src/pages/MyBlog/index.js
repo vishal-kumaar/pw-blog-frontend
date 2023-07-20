@@ -23,11 +23,13 @@ export default function MyBlog() {
     }
   };
 
-  useEffect(() => {
-    handleBlogs();
-  },
-  // eslint-disable-next-line
-  []);
+  useEffect(
+    () => {
+      handleBlogs();
+    },
+    // eslint-disable-next-line
+    [blogs]
+  );
 
   return (
     <main
