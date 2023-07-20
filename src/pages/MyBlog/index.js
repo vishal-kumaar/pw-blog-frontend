@@ -10,7 +10,7 @@ export default function MyBlog() {
   const handleBlogs = async () => {
     const res = await getMyBlogs(token);
 
-    if (res.success) {
+    if (res?.success) {
       setBlogs(res.blogs);
     } else {
       setBlogs([]);

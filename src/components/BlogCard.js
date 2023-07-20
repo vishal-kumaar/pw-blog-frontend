@@ -13,7 +13,7 @@ export default function BlogCard({ blog, isEdit, isDelete }) {
 
   const handleDelete = async (blogId) => {
     const res = await deleteBlog(blogId, token);
-    if (res.success) {
+    if (res?.success) {
       toast(res.message, {
         position: "top-right",
         theme: "dark",
@@ -21,7 +21,7 @@ export default function BlogCard({ blog, isEdit, isDelete }) {
         autoClose: 3000,
       });
     } else {
-      toast(res.message, {
+      toast(res?.message, {
         position: "top-right",
         theme: "dark",
         type: "error",

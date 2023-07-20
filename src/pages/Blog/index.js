@@ -19,10 +19,10 @@ export default function Blog() {
   const handleBlog = async () => {
     const res = await getBlogById(blogId);
 
-    if (res.success) {
+    if (res?.success) {
       setBlog(res.blog);
     } else {
-      toast(res.message, {
+      toast(res?.message, {
         position: "top-right",
         theme: "dark",
         type: "error",

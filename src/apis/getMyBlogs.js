@@ -13,7 +13,7 @@ const getMyBlogs = async (token) => {
 
     return res.data;
   } catch (error) {
-    return error.response.data;
+    return error.response?.data;
   }
 };
 

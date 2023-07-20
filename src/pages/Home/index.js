@@ -8,7 +8,7 @@ export default function Home() {
   const handleBlog = async () => {
     const res = await getAllBlogs();
 
-    if (res.success) {
+    if (res?.success) {
       setBlogs(res.blogs);
     } else {
       setBlogs([]);

@@ -24,7 +24,7 @@ export default function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const res = await registerUser(userData);
-    if (res.success) {
+    if (res?.success) {
       setUserToken(res.token);
       toast(res.message, {
         position: "top-right",
@@ -34,7 +34,7 @@ export default function Register() {
       });
       navigate("/", { replace: true });
     } else {
-      toast(res.message, {
+      toast(res?.message, {
         position: "top-right",
         type: "error",
         theme: "dark",

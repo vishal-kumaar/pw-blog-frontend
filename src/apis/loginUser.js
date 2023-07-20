@@ -9,7 +9,7 @@ const loginUser = async (data) => {
 
     return res.data;
   } catch (error) {
-    return error.response.data;
+    return error.response?.data;
   }
 };
 

@@ -25,7 +25,7 @@ export default function AddBlog() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const res = await addBlog(blogData, token);
-    if (res.success) {
+    if (res?.success) {
       toast(res.message, {
         position: "top-right",
         type: "success",
@@ -34,7 +34,7 @@ export default function AddBlog() {
       });
       navigate(`/blog/${res.blog._id}`);
     } else {
-      toast(res.message, {
+      toast(res?.message, {
         position: "top-right",
         type: "error",
         theme: "dark",

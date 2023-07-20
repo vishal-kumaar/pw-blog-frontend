@@ -12,7 +12,7 @@ export default function EditBlog() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const res = await updateBlog(blog._id, blog, token);
-    if (res.success) {
+    if (res?.success) {
       toast(res.message, {
         position: "top-right",
         type: "success",
@@ -21,7 +21,7 @@ export default function EditBlog() {
       });
       close();
     } else {
-      toast(res.message, {
+      toast(res?.message, {
         position: "top-right",
         type: "error",
         theme: "dark",
