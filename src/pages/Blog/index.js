@@ -45,7 +45,7 @@ export default function Blog() {
             event.target.src = imagePlaceholder;
           }}
           alt="cover"
-          className="w-[70%] block"
+          className="w-[95%] sm:w-[70%] block"
         />
         <h1 className="font-bold text-4xl mt-10">{blog.title}</h1>
         <p className="font-normal text-2xl mt-5">{blog.desc}</p>
@@ -54,7 +54,13 @@ export default function Blog() {
         </p>
       </main>
       <hr className="my-6" />
-      <pre className="font-normal font-sans text-lg w-full">{blog.content}</pre>
+      <code
+        className="font-sans text-lg font-medium break-words"
+        style={{
+          whiteSpace: "pre-wrap",
+        }}>
+        {blog.content}
+      </code>
     </div>
   );
 }
