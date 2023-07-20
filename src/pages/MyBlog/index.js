@@ -1,19 +1,40 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import BlogCard from "../../components/BlogCard";
+import getMyBlogs from "../../apis/getMyBlogs";
+import { toast } from "react-toastify";
+import TokenContext from "../../contexts/token/TokenContext";
 
 export default function MyBlog() {
+  const [blogs, setBlogs] = useState([]);
+  const { token } = useContext(TokenContext);
+
+  const handleBlogs = async () => {
+    const res = await getMyBlogs(token);
+
+    if (res.success) {
+      setBlogs(res.blogs);
+    } else {
+      toast(res.message, {
+        position: "top-right",
+        theme: "dark",
+        type: "error",
+        autoClose: 3000,
+      });
+    }
+  };
+
+  useEffect(() => {
+    handleBlogs();
+  },
+  // eslint-disable-next-line
+  []);
+
   return (
     <main
       className={`text-[#B9B9B9] flex flex-wrap gap-x-3 gap-y-6 w-[90%] sm:w-[95%] xl:w-[70rem] mx-auto my-7`}>
-      <BlogCard
-        title="Learn web development in 10 days on PW Skills"
-        desc="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum officiis
-          ducimus tenetur veritatis numquam nemo. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Dignissimos, officiis."
-        imgUrl="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200214165928/Web-Development-Course-Thumbnail.jpg"
-        isEdit={true}
-        isDelete={true}
-      />
+      {blogs.map((blog) => (
+        <BlogCard key={blog._id} blog={blog} isEdit={true} isDelete={true} />
+      ))}
     </main>
   );
 }
