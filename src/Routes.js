@@ -23,7 +23,7 @@ export default function Routes() {
       element: <Register />,
     },
     {
-      path: "/blog/:id",
+      path: "/blog/:blogId",
       element: <Blog />,
     },
     {
