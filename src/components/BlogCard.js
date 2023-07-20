@@ -1,11 +1,34 @@
 import React, { useContext } from "react";
 import EditBlogContext from "../contexts/editBlog/EditBlogContext";
+import TokenContext from "../contexts/token/TokenContext";
 import imagePlaceholder from "../assets/icons/image_placeholder.svg";
 import { useNavigate } from "react-router-dom";
+import deleteBlog from "../apis/deleteBlog";
+import { toast } from "react-toastify";
 
 export default function BlogCard({ blog, isEdit, isDelete }) {
   const { edit } = useContext(EditBlogContext);
+  const { token } = useContext(TokenContext);
   const navigate = useNavigate();
+
+  const handleDelete = async (blogId) => {
+    const res = await deleteBlog(blogId, token);
+    if (res.success) {
+      toast(res.message, {
+        position: "top-right",
+        theme: "dark",
+        type: "success",
+        autoClose: 3000,
+      });
+    } else {
+      toast(res.message, {
+        position: "top-right",
+        theme: "dark",
+        type: "error",
+        autoClose: 3000,
+      });
+    }
+  };
 
   return (
     <div
@@ -38,6 +61,7 @@ export default function BlogCard({ blog, isEdit, isDelete }) {
         Edit
       </button>
       <button
+        onClick={() => handleDelete(blog._id)}
         className={`${
           isDelete ? "block" : "hidden"
         } bg-[#EC5131] hover:bg-[#F26D49] w-full rounded-lg py-1.5 px-2 mt-3 text-lg text-white`}>
