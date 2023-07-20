@@ -10,6 +10,8 @@ export default function Home() {
 
     if (res.success) {
       setBlogs(res.blogs);
+    } else {
+      setBlogs([]);
     }
   };
 

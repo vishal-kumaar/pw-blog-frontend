@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import BlogCard from "../../components/BlogCard";
 import getMyBlogs from "../../apis/getMyBlogs";
-import { toast } from "react-toastify";
 import TokenContext from "../../contexts/token/TokenContext";
 
 export default function MyBlog() {
@@ -14,12 +13,7 @@ export default function MyBlog() {
     if (res.success) {
       setBlogs(res.blogs);
     } else {
-      toast(res.message, {
-        position: "top-right",
-        theme: "dark",
-        type: "error",
-        autoClose: 3000,
-      });
+      setBlogs([]);
     }
   };
 
