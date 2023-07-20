@@ -34,7 +34,7 @@ export default function BlogCard({ blog, isEdit, isDelete }) {
         className={`${
           isEdit ? "block" : "hidden"
         } bg-[#EC5131] hover:bg-[#F26D49] w-full rounded-lg py-1.5 px-2 mt-3 text-lg text-white`}
-        onClick={() => edit(blog._id)}>
+        onClick={() => edit(blog)}>
         Edit
       </button>
       <button
