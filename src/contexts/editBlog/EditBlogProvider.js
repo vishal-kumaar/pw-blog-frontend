@@ -3,20 +3,32 @@ import EditBlogContext from "./EditBlogContext";
 
 export default function EditBlogProvider({ children }) {
   const [isEditBlog, setIsEditBlog] = useState(false);
-  const [blogId, setBlogId] = useState("");
+  const [blog, setBlog] = useState({
+    title: "",
+    desc: "",
+    imgUrl: "",
+    content: "",
+  });
 
-  const edit = (blogId) => {
-    setBlogId(blogId);
+  const edit = (blog) => {
+    setBlog(blog);
     setIsEditBlog(true);
   };
 
   const close = () => {
-    setBlogId("");
+    setBlog(null);
     setIsEditBlog(false);
   };
 
+  const changeBlogData = (fieldName, value) => {
+    setBlog({
+      ...blog,
+      [fieldName]: value,
+    });
+  };
+
   return (
-    <EditBlogContext.Provider value={{ isEditBlog, blogId, edit, close }}>
+    <EditBlogContext.Provider value={{ isEditBlog, blog, changeBlogData, edit, close }}>
       {children}
     </EditBlogContext.Provider>
   );
