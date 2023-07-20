@@ -32,9 +32,7 @@ export default function Register() {
         theme: "dark",
         autoClose: 3000,
       });
-      setTimeout(() => {
-        navigate("/", { replace: true });
-      });
+      navigate("/", { replace: true });
     } else {
       toast(res.message, {
         position: "top-right",
