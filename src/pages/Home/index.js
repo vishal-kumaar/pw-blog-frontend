@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import BlogCard from "../../components/BlogCard";
 import getAllBlogs from "../../apis/getAllBlogs";
+import BlogsNotFound from "../../components/BlogsNotFound";
 
 export default function Home() {
   const [blogs, setBlogs] = useState([]);
@@ -10,14 +11,17 @@ export default function Home() {
 
     if (res?.success) {
       setBlogs(res.blogs);
-    } else {
-      setBlogs([]);
     }
   };
 
   useEffect(() => {
     handleBlog();
   }, [blogs]);
+
+
+  if (blogs.length === 0) {
+    return <BlogsNotFound />;
+  }
 
   return (
     <main

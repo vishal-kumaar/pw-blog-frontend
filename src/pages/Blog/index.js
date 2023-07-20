@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import getBlogById from "../../apis/getBlogById";
 import { useParams } from "react-router-dom";
-import { toast } from "react-toastify";
 import imagePlaceholder from "../../assets/icons/image_placeholder.svg";
+import BlogsNotFound from "../../components/BlogsNotFound";
 
 export default function Blog() {
   const [blog, setBlog] = useState(null);
@@ -21,13 +21,6 @@ export default function Blog() {
 
     if (res?.success) {
       setBlog(res.blog);
-    } else {
-      toast(res?.message, {
-        position: "top-right",
-        theme: "dark",
-        type: "error",
-        autoClose: 3000,
-      });
     }
   };
 
@@ -40,7 +33,7 @@ export default function Blog() {
   );
 
   if (!blog) {
-    return null;
+    return <BlogsNotFound />;
   }
 
   return (
@@ -61,7 +54,7 @@ export default function Blog() {
         </p>
       </main>
       <hr className="my-6" />
-        <pre className="font-normal font-sans text-lg w-full">{blog.content}</pre>
+      <pre className="font-normal font-sans text-lg w-full">{blog.content}</pre>
     </div>
   );
 }

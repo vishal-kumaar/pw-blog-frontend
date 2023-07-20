@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import BlogCard from "../../components/BlogCard";
 import getMyBlogs from "../../apis/getMyBlogs";
 import TokenContext from "../../contexts/token/TokenContext";
+import BlogsNotFound from "../../components/BlogsNotFound";
 
 export default function MyBlog() {
   const [blogs, setBlogs] = useState([]);
@@ -24,6 +25,10 @@ export default function MyBlog() {
     // eslint-disable-next-line
     [blogs]
   );
+
+  if (blogs.length === 0) {
+    return <BlogsNotFound />;
+  }
 
   return (
     <main
