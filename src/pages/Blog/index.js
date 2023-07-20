@@ -34,10 +34,6 @@ export default function Blog() {
   useEffect(
     () => {
       handleBlog();
-      const content = document.getElementById("content");
-      if (content) {
-        content.style.height = `${content.scrollHeight}px`;
-      }
     },
     // eslint-disable-next-line
     []
@@ -65,11 +61,7 @@ export default function Blog() {
         </p>
       </main>
       <hr className="my-6" />
-      <textarea
-        readOnly={true}
-        id="content"
-        className="font-normal text-lg bg-transparent overflow-hidden flex w-full outline-none"
-        value={blog.content}></textarea>
+        <pre className="font-normal font-sans text-lg w-full">{blog.content}</pre>
     </div>
   );
 }
