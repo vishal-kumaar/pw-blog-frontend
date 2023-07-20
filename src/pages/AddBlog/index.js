@@ -42,12 +42,6 @@ export default function AddBlog() {
       });
     }
 
-    setBlogData({
-      title: "",
-      desc: "",
-      imgUrl: "",
-      content: "",
-    });
   };
 
   return (
